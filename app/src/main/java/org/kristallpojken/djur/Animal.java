@@ -10,6 +10,7 @@ public class Animal {
     public String name;
     public String description;
     public String picture;
+
     // Konstruktorer
     Animal(String name, String description)
     {

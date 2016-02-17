@@ -1,5 +1,7 @@
 package org.kristallpojken.djur;
 
+import android.util.Log;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -23,7 +25,14 @@ public class Zoo implements Serializable{
         animals=new ArrayList<Animal>();
         for (String name:animalNames)
         {
-            animals.add(new Animal(name,"test"));
+            animals.add(new Animal(name,"Tom beskrivning"));
+        }
+        animalIterator=animals.iterator();
+
+        for (String desc:animalDescriptions)
+        {
+            getNextAnimal().description=desc;
+            Log.i("DJURBESKRIVNING",desc);
         }
         animalIterator=animals.iterator();
     }
@@ -33,6 +42,7 @@ public class Zoo implements Serializable{
     // Instansmetoder
     public Animal getFirstAnimal()
     {
+        resetIterator();
         return animals.get(0);
     }
     public Animal getNextAnimal()
