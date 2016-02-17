@@ -32,14 +32,31 @@ public class Zoo implements Serializable{
         for (String desc:animalDescriptions)
         {
             getNextAnimal().description=desc;
-            Log.i("DJURBESKRIVNING",desc);
+            //Log.i("DJURBESKRIVNING",desc);
         }
         animalIterator=animals.iterator();
+        findAnimal("varg");
     }
 
     // Klassmetoder
 
     // Instansmetoder
+    public Animal findAnimal(String name)
+    {
+        resetIterator();
+        Animal animal;
+        while((animal=getNextAnimal())!=null)
+        {
+            Log.i("Letar djur",name+"<->"+animal.name);
+            if ( name.equals(animal.name) )
+            {
+                Log.i("Hittade djur",animal.name);
+                return animal;
+            }
+        }
+        return new Animal("Fel","Hittade inget djur med namn"+name);
+
+    }
     public Animal getFirstAnimal()
     {
         resetIterator();

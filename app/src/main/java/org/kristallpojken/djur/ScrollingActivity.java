@@ -61,6 +61,7 @@ public class ScrollingActivity extends AppCompatActivity {
                     TextView text = (TextView) v; // Att casta om till ett typdefinierat objekt verkar nödvändigt
                     Intent intent = new Intent(ScrollingActivity.this, DetailActivity.class); // Behövs .this?
                     intent.putExtra("animal",text.getText()); // Lägg in extrafält i intentionen med djurets namn
+
                     text.setText("klick");
                     startActivity(intent);                    // Aktivera intentionen
                 }
