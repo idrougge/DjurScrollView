@@ -16,5 +16,6 @@ public class DetailActivity extends AppCompatActivity {
         String animalKey=intent.getStringExtra("animal");
         TextView animalDescription=(TextView)findViewById(R.id.detailText);
         animalDescription.setText(animalKey);
+        //animalDescription.setText();
     }
 }

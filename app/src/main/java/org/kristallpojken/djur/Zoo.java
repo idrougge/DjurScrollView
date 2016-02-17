@@ -1,12 +1,13 @@
 package org.kristallpojken.djur;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- * Created by iggy on 16-02-03.
+ * Grupperar en rad djur ur klassen Animal
  */
-public class Zoo {
+public class Zoo implements Serializable{
     // Klassvariabler
     static final String[] animalNames={"älg","säl","varg","zebra","kobra","örn","björn","vildsvin",
                                        "gris","hund","svala","tiger","mollusk","silverfisk","ödla"};
